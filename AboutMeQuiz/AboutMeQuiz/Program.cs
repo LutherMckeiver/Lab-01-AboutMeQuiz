@@ -8,27 +8,39 @@ namespace AboutMeQuiz
         {
             QuestionOne();
             QuestionTwo();
+            QuestionThree();
             Console.ReadLine();
         }
 
-        static int QuestionOne()
+        static string[] QuestionOne()
         {
+            string[] states = { "Texas", "Florida", "Georgia", "Kentucky", "Colorado", "Washington", "California",
+                "North Carolina", "South Carolina","New Mexico", "Arizona", "Indiana", "Illinois", "Missouri",
+                "Louisiana", "Oregon", "California", "Alabama"};
+
             int statesVisited = 18;
-            string replyCorrect = "You're correct I have visited 18 states";
-            string replyWrong = "Sorry wrong answer";
+            string replyWrong = "Sorry wrong answer.";
             Console.WriteLine("How many states have I visited?");
             string userResponse = Console.ReadLine();
             int formattedUserResponse = int.Parse(userResponse);
 
             if (formattedUserResponse == statesVisited)
             {
-                Console.WriteLine(replyCorrect);
-                return statesVisited;
+                Console.WriteLine("Correct I have lived in: ");
+                for (int i = 0; i < states.Length; i++)
+                {
+                    Console.WriteLine(states[i]);
+                }
+                return states;
             }
             else
             {
-                Console.WriteLine(replyWrong);
-                return formattedUserResponse;
+                Console.WriteLine(replyWrong + " These are the states: ");
+                for (int i = 0; i < states.Length; i++)
+                {
+                    Console.WriteLine(states[i]);
+                }
+                return states;
             }
         }
 
@@ -37,7 +49,7 @@ namespace AboutMeQuiz
             string answer = "Verily";
             Console.WriteLine("What is my dream place to work at? ");
             string userReply = Console.ReadLine();
-          
+
             if (userReply == answer)
             {
                 Console.WriteLine("Correct Verily is an amazing company!");
@@ -45,9 +57,27 @@ namespace AboutMeQuiz
             }
             else
             {
-                Console.WriteLine(userReply + " is cool but not my favorite");
+                Console.WriteLine(userReply + " is cool, but not my favorite.");
                 return userReply;
             }
         }
+
+         static string QuestionThree()
+         {
+            string answer = "Marine Biologist";
+            Console.WriteLine("Do you remember what I said yesterday? What did I wan't to be when I was five?");
+            string userReply = Console.ReadLine();
+
+            if (userReply == answer)
+            {
+                Console.WriteLine(@"Aww, you got it I wanted to be a {0} ", answer);
+                return answer;
+            }
+            else
+            {
+                Console.WriteLine(@"Nope I wanted to a {0}", answer);
+                return answer;
+            }
+         }
     }
 }
