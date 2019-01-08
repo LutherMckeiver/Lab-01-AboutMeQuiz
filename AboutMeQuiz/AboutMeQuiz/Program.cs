@@ -9,6 +9,7 @@ namespace AboutMeQuiz
             QuestionOne();
             QuestionTwo();
             QuestionThree();
+            QuestionFour();
             Console.ReadLine();
         }
 
@@ -79,5 +80,25 @@ namespace AboutMeQuiz
                 return answer;
             }
          }
+
+        static bool QuestionFour()
+        {
+            bool wrongAnswer = false;
+            int myAge = 22;
+            Console.WriteLine("How old am I? ");
+            string userReply = Console.ReadLine();
+            int formattedReply = int.Parse(userReply);
+
+            if (formattedReply != myAge)
+            {
+                Console.WriteLine("Wrong answer");
+                return wrongAnswer;
+            }
+            else
+            {
+                Console.WriteLine("Awesome great guess!");
+                return true; 
+            }
+        }
     }
 }
