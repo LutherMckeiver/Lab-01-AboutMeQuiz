@@ -14,7 +14,7 @@ namespace AboutMeQuiz
             Console.ReadLine();
         }
 
-        static string[] QuestionOne()
+        static string[] QuestionOne() // How many states have I visited? || Output: array of strings
         {
             string[] states = { "Texas", "Florida", "Georgia", "Kentucky", "Colorado", "Washington", "California",
                 "North Carolina", "South Carolina","New Mexico", "Arizona", "Indiana", "Illinois", "Missouri",
@@ -29,9 +29,9 @@ namespace AboutMeQuiz
             if (formattedUserResponse == statesVisited)
             {
                 Console.WriteLine("Correct I have lived in: ");
-                for (int i = 0; i < states.Length; i++)
+                for (int i = 0; i < states.Length; i++) // iterating through array 
                 {
-                    Console.WriteLine(states[i]);
+                    Console.WriteLine(states[i]); // printing individual states to console
                 }
                 return states;
             }
@@ -46,11 +46,11 @@ namespace AboutMeQuiz
             }
         }
 
-        static string QuestionTwo()
+        static string QuestionTwo() // What is my dream place to work at? || Output: string 
         {
             string answer = "Verily";
             Console.WriteLine("What is my dream place to work at? ");
-            string userReply = Console.ReadLine();
+            string userReply = Console.ReadLine(); // Grabbing user input 
 
             if (userReply == answer)
             {
@@ -64,8 +64,8 @@ namespace AboutMeQuiz
             }
         }
 
-         static string QuestionThree()
-         {
+         static string QuestionThree() //  What did I wan't to be when I was five? || Output: string
+        {
             string answer = "Marine Biologist";
             Console.WriteLine("Do you remember what I said yesterday? What did I wan't to be when I was five?");
             string userReply = Console.ReadLine();
@@ -82,15 +82,15 @@ namespace AboutMeQuiz
             }
          }
 
-        static bool QuestionFour()
+        static bool QuestionFour() //  How old am I? || Output: boolean 
         {
             bool wrongAnswer = false;
             int myAge = 22;
             Console.WriteLine("How old am I? ");
             string userReply = Console.ReadLine();
-            int formattedReply = int.Parse(userReply);
+            int formattedReply = int.Parse(userReply); // parsing string into an integer
 
-            if (formattedReply != myAge)
+            if (formattedReply != myAge) 
             {
                 Console.WriteLine("Wrong answer");
                 return wrongAnswer;
@@ -102,32 +102,33 @@ namespace AboutMeQuiz
             }
         }
 
-        static int QuestionFive()
+        static int QuestionFive() // How old is my great grandma? || Output: int
         {
             int greatGrandmasAge = 87;
             Console.WriteLine("How old is my great grandma?");
             string userReply = Console.ReadLine();
 
-            try
+            try // implementing try/catch to compare values.
             {
-                int formattedReply = int.Parse(userReply);
+                int formattedReply = int.Parse(userReply); // parsing string for comparison
                 if (formattedReply == greatGrandmasAge)
                 {
                     Console.WriteLine("Wow you're great at guessing!");
+                    Console.WriteLine("Thanks For Playing!");
                     return greatGrandmasAge;
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Guess");
+                    Console.WriteLine("Sorry wrong guess, She is 87!");
+                    Console.WriteLine("Thanks For Playing!");
                 }
-                Console.WriteLine("Thanks For Playing!");
+               
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message); // Writng exception to console. 
             }
             return greatGrandmasAge;
         }
-
     }
 }
