@@ -10,6 +10,7 @@ namespace AboutMeQuiz
             QuestionTwo();
             QuestionThree();
             QuestionFour();
+            QuestionFive();
             Console.ReadLine();
         }
 
@@ -100,5 +101,33 @@ namespace AboutMeQuiz
                 return true; 
             }
         }
+
+        static int QuestionFive()
+        {
+            int greatGrandmasAge = 87;
+            Console.WriteLine("How old is my great grandma?");
+            string userReply = Console.ReadLine();
+
+            try
+            {
+                int formattedReply = int.Parse(userReply);
+                if (formattedReply == greatGrandmasAge)
+                {
+                    Console.WriteLine("Wow you're great at guessing!");
+                    return greatGrandmasAge;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Guess");
+                }
+                Console.WriteLine("Thanks For Playing!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return greatGrandmasAge;
+        }
+
     }
 }
